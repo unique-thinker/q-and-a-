@@ -19,7 +19,7 @@ EDITOR="vim" rails credentials:edit --environment development
 ```
 
 ```bash
-EDITOR="vim" rails credentials:edit --environment development
+EDITOR="vim" rails credentials:edit --environment test
 ```
 
 Paste the original credentials you copied from config/credentials/credentials.example.yml file in the new credentials file (and save + quit)
