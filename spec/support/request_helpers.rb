@@ -10,10 +10,11 @@ module RequestHelpers
 
   # Our headers helpers module
   module Headers
-    def api_headers(version = 'v1')
+    def api_headers(version: 'v1', authorization: '')
       {
         'Content-Type': 'application/json; charset=utf-8',
-        Accept: "application/vnd.q-and-a.#{version}"
+        Accept: "application/vnd.q-and-a.#{version}",
+        Authorization: "Bearer #{authorization}"
       }
     end
   end

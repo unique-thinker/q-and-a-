@@ -6,6 +6,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require_relative './support/factory_bot'
 require_relative './support/request_helpers'
+require_relative './support/controller_helpers'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
@@ -67,6 +68,7 @@ RSpec.configure do |config|
   # Request helper
   config.include RequestHelpers::Json
   config.include RequestHelpers::Headers
+  config.include ControllerHelpers
   # Database cleaner configuration
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
