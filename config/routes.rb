@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     scope module: :v1, constraints: ApiVersionConstraint.new('v1') do
       resources :users, only: %i[create]
       post '/login', to: 'users#login'
+      resources :questions
     end
   end
 end

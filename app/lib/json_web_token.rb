@@ -7,7 +7,7 @@ class JsonWebToken
       JWT.encode payload, rsa_private, 'RS256'
     end
 
-    def decode
+    def decode(token)
       decoded = JWT.decode(token, rsa_public, true, { algorithm: 'RS256' })[0]
       HashWithIndifferentAccess.new decoded
     end
