@@ -36,7 +36,11 @@ gem 'bootsnap', require: false
 # gem 'image_processing', '~> 1.2'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
+# OAuth JSON Web Token
+gem 'jwt', '2.4.1'
+# The bcrypt Ruby gem provides a simple wrapper for safely handling passwords.
+gem 'bcrypt', '3.1.18'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -48,11 +52,19 @@ group :development, :test do
   gem 'rubocop', '1.34.1', require: false
   # Testing framework
   gem 'rspec-rails', '6.0.0.rc1'
-  # Generate fake data
-  gem 'faker', '2.22'
+  # Factory_bot is a fixtures replacement with a straightforward definition syntax
+  gem 'factory_bot_rails', '6.2'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem 'spring'
+end
+
+group :test do
+  # Generate fake data
+  gem 'faker', '2.22'
+  gem 'shoulda-matchers', '5.1'
+  # Clean your ActiveRecord databases with Database Cleaner.
+  gem 'database_cleaner-active_record'
 end
