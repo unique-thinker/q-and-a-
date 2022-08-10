@@ -5,4 +5,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  scope :api, module: :api do
+    scope module: :v1, constraints: ApiVersionConstraint.new('v1') do
+      resources :users, only: %i[create]
+      post '/login', to: 'users#login'
+    end
+  end
 end
