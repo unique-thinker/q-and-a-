@@ -7,4 +7,7 @@ class User < ApplicationRecord
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates_confirmation_of :password
   has_secure_password :password
+
+  # Associations
+  has_many :questions, dependent: :destroy
 end
