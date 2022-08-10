@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -25,7 +27,7 @@ gem 'puma', '5.6.4'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
@@ -44,7 +46,7 @@ group :development, :test do
   gem 'bullet', '7.0.2'
   # RuboCop is a Ruby code style checking and code formatting tool
   gem 'rubocop', '1.34.1', require: false
-  # Testing framework 
+  # Testing framework
   gem 'rspec-rails', '6.0.0.rc1'
   # Generate fake data
   gem 'faker', '2.22'
@@ -54,4 +56,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem 'spring'
 end
-
