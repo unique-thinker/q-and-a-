@@ -6,6 +6,8 @@ class Question < ApplicationRecord
 
   # Associations
   belongs_to :user
+  # Associations
+  has_many :answers, dependent: :destroy
 
   # Scope
   scope :with_user_details, -> {
